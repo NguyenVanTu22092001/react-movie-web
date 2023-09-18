@@ -7,7 +7,9 @@ import MovieList from "../../components/movieList/movieList";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
-
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
@@ -25,6 +27,7 @@ const Home = () => {
           transitionTime={3}
           infiniteLoop={true}
           showStatus={false}
+          showIndicators={!isMobile()}
         >
           {popularMovies.map((movie) => (
             <Link
@@ -51,9 +54,15 @@ const Home = () => {
                     <i className="fas fa-star" />{" "}
                   </span>
                 </div>
-                <div className="posterImage__description">
-                  {movie ? movie.overview : ""}
-                </div>
+                {isMobile() ? (
+                  <div className="posterImage__description">
+                    {/* {movie ? movie.overview : ""} */}
+                  </div>
+                ) : (
+                  <div className="posterImage__description">
+                    {movie ? movie.overview : ""}
+                  </div>
+                )}
               </div>
             </Link>
           ))}

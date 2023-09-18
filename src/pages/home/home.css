@@ -51,3 +51,19 @@
     text-align: left;
     width: 50%;
 }
+
+@media (max-width: 768px) {
+    .posterImage {
+      height: 300px; /* Adjust the height for mobile screens */
+    }
+  
+    .posterImage__overlay {
+      padding: 2rem; /* Reduce padding for mobile screens */
+    }
+  
+    .posterImage__title {
+      font-size: 2rem; /* Reduce font size for mobile screens */
+    }
+  
+    /* Add other mobile-specific styles here */
+  }

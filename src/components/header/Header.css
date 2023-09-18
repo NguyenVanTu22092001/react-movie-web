@@ -32,3 +32,51 @@ a > span:hover {
     font-size: 2rem;
 }
 
+
+/* Base styles for larger screens */
+.header {
+    margin: 0 2.5rem;
+    padding: 0.5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .headerLeft, .headerRight {
+    display: flex;
+    align-items: center;
+  }
+  
+  a > span {
+    margin: 0 30px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  a > span:hover {
+    color: red;
+  }
+  
+  .header__icon {
+    width: 80px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles for smaller screens (e.g., mobile) */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center; /* Center-align text on smaller screens */
+      padding: 1rem 0; /* Increase padding for better touch interaction */
+    }
+  
+    .headerLeft, .headerRight {
+      margin: 1rem 0; /* Add spacing between items on smaller screens */
+    }
+  
+    a > span {
+      margin: 10px 0; /* Adjust margin for better spacing on smaller screens */
+    }
+  }
+  
